@@ -21,18 +21,18 @@
       pointer-events: none;
       z-index: 1;
     }
- .heart {
-  position: absolute;
-  animation: fall linear forwards;
-  color: #ffffff;        /* blanco */
-  text-shadow: 0 0 6px rgba(255, 255, 255, 0.9); /* efecto brillante */
-}
-@keyframes fall {
-  to {
-    transform: translateY(100vh) rotate(360deg);
-    opacity: 0.8;
-  }
-}
+    .heart {
+      position: absolute;
+      animation: fall linear forwards;
+      color: #ffffff;
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.9);
+    }
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0.8;
+      }
+    }
     .screen {
       display: none;
       justify-content: center;
@@ -120,9 +120,9 @@
       display: block;
       max-width: 50%;
       height: 150px;
-      object-fit: contain; /* asegura que la imagen no se recorte */
+      object-fit: contain;
       border-radius: 15px;
-      margin: 0 auto 15px auto; /* centrada y con margen abajo */
+      margin: 0 auto 15px auto;
       box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
     }
     .back-btn {
@@ -150,13 +150,11 @@
   Tu navegador no soporta el audio.
 </audio>
 
-  
 <div class="hearts"></div>
 <div id="passwordScreen" class="screen password-screen active">
-<img src="img/imagen.jpg" 
+  <img src="img/imagen.jpg" 
      alt="Imagen decorativa"
-     style="width:300px; height:auto; border: 5px solid rgb(226, 222, 222); 
-  border-radius: 20px; ">
+     style="width:300px; height:auto; border: 5px solid rgb(226, 222, 222); border-radius: 20px;">
   <h2>🔒 Ingresa la contraseña dd/mm</h2>
   <p>Pista: Tu cumpleaños</p>
   <div class="input-display" id="inputDisplay">••••</div>
@@ -178,68 +176,59 @@
 
 <div id="notepadScreen" class="screen2">
   <div class="notepad" style="text-align: center;">
-    <img src="img/imagen.jpg"  
-     alt="Imagen decorativa" 
-     class="note-img-full">
-<h3 style="text-align: left; margin-bottom: 0;">📅 <span id="fechaActual"></span></h3>
-<h4 style="text-align: left; margin-top: 0;">💌 Génesis</h4>
-<p style="text-align: justify;">
-  ✨🎄 Feliz Navidad 🎄✨
-  </p>
-  <p style="text-align: justify;">
-  En esta fecha tan especial quiero desearte que la paz y la alegría del Señor llenen tu vida y la de tu familia.
-   La navidad siempre nos recuerda que el regalo más grande no está en lo material, sino en la presencia de Cristo, 
-   quien vino a traer esperanza y salvación a nuestros corazones.
-  </p>
-<p style="text-align: justify;">
-  Este año (personalmente) ha sido lleno de pruebas, pero también de victorias que el Señor, en su fidelidad, concede.
-   En medio de los desafíos, Él ha fortalecido mi fe y me ha mostrado que aun en los momentos difíciles siempre está 
-   obrando para bien, y sé que en tu caso tambien ha sido de esa manera. Cada experiencia se convierte en una oportunidad 
-   para crecer en confianza, aprender y ver su gracia en acción.
-</p>
-<p style="text-align: justify;">
-  Quiero que sepas que siempre voy a estar ahí para lo que necesites, sea cual sea el tema. Eres una persona muy especial para mí, y me alegra ver 
- cómo estás creciendo en el Señor. Es evidente que Dios está obrando en tu vida, y me encanta ver cómo esa fe, fortaleza y sabiduría 
- florecen en tu corazón. Es evidente y notorio el crecimiento de alguien que camina de la mano de Papá y permite que Él moldee su corazón.😊
-</p>      
-<p style="text-align: justify;">
- Quiero tambien aprovechar este momento para expresar lo valiosa que es tu familia. Tu mamá Verónica es un gran ejemplo de mujer de Dios,
-  una mujer virtuosa cuya fe inspira. Tu hermano Isaac, que está en pleno crecimiento, es alguien a quien el Señor seguirá 
-  fortaleciendo; oro para que crezca en sabiduría y que siempre encuentres maneras de apoyarlo en cada etapa de su vida. 
-  Y aunque no tengo el privilegio de conocer a tu papá, sé que los ama profundamente. Y deseo de todo corazón que el Señor sigue siendo la base de ese amor que los une.❤️
-</p>
- <p style="text-align: justify;">   
-"Jehová te bendiga, y te guarde; Jehová haga resplandecer su rostro sobre ti, y tenga de ti misericordia; Jehová alce sobre ti su rostro, y ponga en ti paz."<br>
-✨ Números 6:24-26
-</p>
-<p style="text-align: justify;">
-Con mucho cariño,<br>
-Alexander.<br>
-Te mando un fuerte abrazo, y que Dios te bendiga muchísimo.🤗
-</p>
+    <img src="img/imagen.jpg" alt="Imagen decorativa" class="note-img-full">
+    <h3 style="text-align: left; margin-bottom: 0;">📅 <span id="fechaActual"></span></h3>
+    <h4 style="text-align: left; margin-top: 0;">💌 Génesis</h4>
+
+    <!-- Carta con efecto de escritura -->
+    <div id="cartaTexto" style="display:none; text-align: justify;">
+      <p>✨🎄 Feliz Navidad 🎄✨</p>
+      <p>En esta fecha tan especial quiero desearte que la paz y la alegría del Señor llenen tu vida y la de tu familia.
+      La navidad siempre nos recuerda que el regalo más grande no está en lo material, sino en la presencia de Cristo,
+      quien vino a traer esperanza y salvación a nuestros corazones.</p>
+      <p>Este año (personalmente) ha sido lleno de pruebas, pero también de victorias que el Señor, en su fidelidad, concede.
+      En medio de los desafíos, Él ha fortalecido mi fe y me ha mostrado que aun en los momentos difíciles siempre está 
+      obrando para bien, y sé que en tu caso tambien ha sido de esa manera. Cada experiencia se convierte en una oportunidad 
+      para crecer en confianza, aprender y ver su gracia en acción.</p>
+      <p>Quiero que sepas que siempre voy a estar ahí para lo que necesites, sea cual sea el tema. Eres una persona muy especial para mí, 
+      y me alegra ver cómo estás creciendo en el Señor. Es evidente que Dios está obrando en tu vida, y me encanta ver cómo esa fe, 
+      fortaleza y sabiduría florecen en tu corazón. Es evidente y notorio el crecimiento de alguien que camina de la mano de Papá 
+      y permite que Él moldee su corazón.😊</p>
+      <p>Quiero tambien aprovechar este momento para expresar lo valiosa que es tu familia. Tu mamá Verónica es un gran ejemplo de mujer de Dios,
+      una mujer virtuosa cuya fe inspira. Tu hermano Isaac, que está en pleno crecimiento, es alguien a quien el Señor seguirá fortaleciendo; 
+      oro para que crezca en sabiduría y que siempre encuentres maneras de apoyarlo en cada etapa de su vida. 
+      Y aunque no tengo el privilegio de conocer a tu papá, sé que los ama profundamente. Y deseo de todo corazón que el Señor sigue siendo 
+      la base de ese amor que los une.❤️</p>
+      <p>"Jehová te bendiga, y te guarde; Jehová haga resplandecer su rostro sobre ti, y tenga de ti misericordia; Jehová alce sobre ti su rostro, y ponga en ti paz."<br>
+      ✨ Números 6:24-26</p>
+      <p>Con mucho cariño,<br>Alexander.<br>
+      Te mando un fuerte abrazo, y que Dios te bendiga muchísimo.🤗</p>
+    </div>
+
     <button class="back-btn" onclick="goBack()">🔙 Inicio</button>
   </div>
 </div>
 
-
 <script>
+  // Copos de nieve
   function crearCorazones() {
-  const heartsContainer = document.querySelector('.hearts');
-  setInterval(() => {
-    const copo = document.createElement('div');
-    copo.classList.add('heart');
-    copo.textContent = '✻'; // copo en blanco (Unicode)
-    copo.style.left = Math.random() * 100 + 'vw';
-    copo.style.fontSize = (Math.random() * 25 + 15) + 'px';
-    copo.style.animationDuration = (Math.random() * 5 + 5) + 's';
-    copo.style.opacity = '1';
-    heartsContainer.appendChild(copo);
-    setTimeout(() => { copo.remove(); }, 8000);
-  }, 400);
+    const heartsContainer = document.querySelector('.hearts');
+    setInterval(() => {
+      const copo = document.createElement('div');
+      copo.classList.add('heart');
+      copo.textContent = '✻';
+      copo.style.left = Math.random() * 100 + 'vw';
+      copo.style.fontSize = (Math.random() * 25 + 15) + 'px';
+      copo.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      heartsContainer.appendChild(copo);
+      setTimeout(() => { copo.remove(); }, 8000);
+    }, 400);
   }
   crearCorazones();
+
   const correctPassword = '2105';
   let input = '';
+
   function enterDigit(digit) {
     if (input.length < 4) {
       input += digit;
@@ -254,24 +243,42 @@ Te mando un fuerte abrazo, y que Dios te bendiga muchísimo.🤗
     document.getElementById('inputDisplay').textContent = input.padEnd(4, '•');
   }
 
-  function checkPassword() {
-  if (input.length === 4) {
-    if (input === correctPassword) {
-      document.getElementById('passwordScreen').classList.remove('active');
-      document.getElementById('notepadScreen').classList.add('active');
-      const music = document.getElementById('backgroundMusic');
-      music.play().catch((err) => {
-        console.error("No se pudo reproducir la música:", err);
-      });
-    } else {
-      alert('Contraseña incorrecta, intenta de nuevo');
-      input = '';
-      updateDisplay();
+  // efecto máquina de escribir
+  function escribirTexto(elementoId, velocidad = 40) {
+    const contenedor = document.getElementById(elementoId);
+    const texto = contenedor.innerHTML;
+    contenedor.innerHTML = "";
+    contenedor.style.display = "block";
+    let i = 0;
+    function escribir() {
+      if (i < texto.length) {
+        contenedor.innerHTML += texto.charAt(i);
+        i++;
+        setTimeout(escribir, velocidad);
+      }
     }
-  } else {
-    alert('Debes ingresar los 4 dígitos.');
+    escribir();
   }
-}
+
+  function checkPassword() {
+    if (input.length === 4) {
+      if (input === correctPassword) {
+        document.getElementById('passwordScreen').classList.remove('active');
+        document.getElementById('notepadScreen').classList.add('active');
+        const music = document.getElementById('backgroundMusic');
+        music.play().catch((err) => { console.error("No se pudo reproducir la música:", err); });
+        
+        // activar efecto de escritura
+        escribirTexto("cartaTexto", 30);
+      } else {
+        alert('Contraseña incorrecta, intenta de nuevo');
+        input = '';
+        updateDisplay();
+      }
+    } else {
+      alert('Debes ingresar los 4 dígitos.');
+    }
+  }
 
   function goBack() {
     document.getElementById('notepadScreen').classList.remove('active');
@@ -280,23 +287,16 @@ Te mando un fuerte abrazo, y que Dios te bendiga muchísimo.🤗
     updateDisplay();
   }
 
-     window.onload = function() {
-      var music = document.getElementById('backgroundMusic');
-      music.muted = false; 
-    };
-    // Mostrar fecha y hora actual
-function mostrarFechaHora() {
-  let ahora = new Date();
-  let opcionesFecha = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  let fecha = ahora.toLocaleDateString('es-ES', opcionesFecha);
-  let hora = ahora.toLocaleTimeString('es-ES');
-  document.getElementById("fechaActual").textContent = fecha + " - " + hora;
-}
-
-// Actualizar cada segundo
-setInterval(mostrarFechaHora, 1000);
-mostrarFechaHora();
-
+  // Mostrar fecha y hora
+  function mostrarFechaHora() {
+    let ahora = new Date();
+    let opcionesFecha = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    let fecha = ahora.toLocaleDateString('es-ES', opcionesFecha);
+    let hora = ahora.toLocaleTimeString('es-ES');
+    document.getElementById("fechaActual").textContent = fecha + " - " + hora;
+  }
+  setInterval(mostrarFechaHora, 1000);
+  mostrarFechaHora();
 </script>
 </body>
 </html>
